@@ -1,0 +1,370 @@
+### AUTOFILL PROFILES ###,,,,,,
+Profile ID,Name,Site,Hotkey,,,
+c66,1. Invite a blank user,localhost:8080/cmkit/,Ctrl + Alt + 1,,,
+c30,1. FTC Salesforce,microfocus.lightning.force.com,,,,
+c29,2. SALESFORCE Open Contacts,microfocus.lightning.force.com/,Alt + `,,,
+c55,2. SalesForce Send Email with cc,,,,,
+c56,3. Mark Milestones All Active Tabs,microfocus.lightning.force.com/,Shift + Alt + #,,,
+c33,4. Call Summary SalesForce,microfocus.lightning.force.com/,Shift + Alt + $,,,
+c41,5. Internal Note SalesForce,microfocus.lightning.force.com,Shift + Alt + %,,,
+c34,6. Webex SalesForce(6),microfocus.lightning.force.com/,Shift + Alt + ^,,,
+c35,7. Handover Salesforce,microfocus.lightning.force.com/,Shift + Alt + &,,,
+c36,8. FTS Transfer SalesForce (8),,Shift + Alt + *,,,
+c50,9.CTRL + ALT + S  - Click Save Salesforce,microfocus.lightning.force.com/,,,,
+c39,9. Get FTP SHIFT ALT F,,Shift + Alt + F,,,
+c37,======Test FTC New=========,,,,,
+c65,======Test FTC New========= [Copy],,,,,
+c67,test,localhost/cmkit/users,,,,
+### AUTOFILL RULES ###,,,,,,
+Rule ID,Type,Name,Value,Site,Mode,Profile
+r74,0,"^instance/hpsw\.status$","Work in Progress","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r76,0,"^var/G\.hpsw\.time\.spent$","00:05:00","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r77,0,"^var/sm\.activity$","Update from customer","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r79,3,"^instance/cust\.visible\.copy$","1","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r106,4,"","var text_field = document.querySelector('[name=""var/update.action/update.action""]').value
+if (text_field == """" || text_field == ""********EMAIL TO CUSTOMER********"") text_field = (""********EMAIL FROM CUSTOMER********"")
+else {
+	text_field = text_field.replaceAll(/From: (?!Vu Nhat)/g, ""********EMAIL FROM CUSTOMER********\nFrom: "")
+    text_field = text_field.replaceAll('From: Vu Nhat', '********EMAIL TO CUSTOMER********\nFrom: Vu Nhat')
+}  
+document.querySelector('[name=""var/update.action/update.action""]').value  = text_field","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r113,3,"^instance/hpsw\.portal\.visible$","1","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r312,4,"","document.querySelector(""force-highlights2 > div.highlights.slds-clearfix.slds-page-header.slds-page-header_record-home > div.secondaryFields > slot > slot > force-highlights-details-item:nth-child(5) > div > p.fieldComponent.slds-text-body--regular.slds-show_inline-block.slds-truncate > slot > force-lookup > div > force-hoverable-link > div > a"").click()","",1,c29
+r226,4,"","function formatAMPM(date) {
+    var hours = date.getHours()
+    var minutes = date.getMinutes()
+    var ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+    }
+ 
+    var today = new Date();
+        dd = String(today.getDate()).padStart(2, '0');
+ 
+        yyyy = today.getFullYear();
+ 
+    var month = new Array();
+        month[0] = ""January"";
+        month[1] = ""February"";
+        month[2] = ""March"";
+        month[3] = ""April"";
+        month[4] = ""May"";
+        month[5] = ""June"";
+        month[6] = ""July"";
+        month[7] = ""August"";
+        month[8] = ""September"";
+        month[9] = ""October"";
+        month[10] = ""November"";
+        month[11] = ""December"";
+        mm = month[today.getMonth()];
+        today =  formatAMPM(new Date)+ "" on ""+ mm + "" ""+ dd  +"" ""+ yyyy+ "" GMT+7""
+var text_field = ""***************WEBEX SUMMARY***************\nDate:  "" + today + "" "" + ""\nSummary:\nSolution:""
+ 
+document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p').forEach((x, i) => x.textContent=text_field)","",1,c34
+r266,4,"","//=================
+ //Click All with Access function
+//Click the dropdown button
+document.querySelectorAll('[class=""forceIcon slds-button__icon slds-icon-utility-down slds-icon_container""]').forEach((x, i) => x.click());
+ 
+//Click the All with access button
+document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(2) > a"").forEach((x, i) => x.click());","",1,c34
+r316,4,"","//====================
+ 
+document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click())
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());
+","",1,c34
+r227,4,"","var text_field = ""******************HANDOVER SUMMARY****************\nHome Region:\nSending Region: APJ\nReceiving Region:\nProblem:\nWork done:\nWork to be done:""
+ 
+document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p').forEach((x, i) => x.textContent=text_field)","",1,c35
+r267,4,"","//=================
+ //Click All with Access function
+//Click the dropdown button
+document.querySelectorAll('[class=""forceIcon slds-button__icon slds-icon-utility-down slds-icon_container""]').forEach((x, i) => x.click());
+ 
+//Click the All with access button
+document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(2) > a"").forEach((x, i) => x.click());","",1,c35
+r315,4,"","//====================
+ 
+document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click())
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());
+","",1,c35
+r228,4,"","var text_field = ""******************FTS SUMMARY****************\nHome Region:\nSending Region:\nReceiving Region:\n\nCustomer availability/confirm contact information:\nIs a warm handover required or not?\nIs there a deadline?:\nElevation status:\n\nProblem:\nWork done:\nWork to be done:""
+ 
+document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p').forEach((x, i) => x.textContent=text_field)","",1,c36
+r268,4,"","//=================
+ //Click All with Access function
+//Click the dropdown button
+document.querySelectorAll('[class=""forceIcon slds-button__icon slds-icon-utility-down slds-icon_container""]').forEach((x, i) => x.click());
+ 
+//Click the All with access button
+document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(2) > a"").forEach((x, i) => x.click());","",1,c36
+r314,4,"","//====================
+ 
+document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click())
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());
+","",1,c36
+r225,4,"","function formatAMPM(date) {
+  var hours = date.getHours()
+  var minutes = date.getMinutes()
+  var ampm = hours >= 12 ? 'pm' : 'am';
+          hours = hours % 12;
+          hours = hours ? hours : 12; // the hour '0' should be '12'
+          minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+  }
+ 
+  var today = new Date();
+      dd = String(today.getDate()).padStart(2, '0');
+ 
+      yyyy = today.getFullYear();
+ 
+  var month = new Array();
+      month[0] = ""January"";
+      month[1] = ""February"";
+      month[2] = ""March"";
+      month[3] = ""April"";
+      month[4] = ""May"";
+      month[5] = ""June"";
+      month[6] = ""July"";
+      month[7] = ""August"";
+      month[8] = ""September"";
+      month[9] = ""October"";
+      month[10] = ""November"";
+      month[11] = ""December"";
+      mm = month[today.getMonth()];
+      today =  ""on ""+ mm + "" ""+ dd  +"" ""+ yyyy;
+      calling_time = formatAMPM(new Date) + "" "" +  today  + "" GMT+7""
+ 
+  var  country_name =  document.querySelector('lightning-formatted-address > a > div:nth-last-child(2)')
+          phone_code = """";
+          country_name = (country_name != null) ? country_name.textContent : ""Unknown""
+              switch(country_name) {
+              case ""Malaysia"":
+              phone_code = ""+60"";
+                  break;
+              case ""Japan"":
+                  phone_code = ""+81""
+                  break;
+              case ""India"":
+                  phone_code = ""+91""
+                  break;
+              case ""China, Peoples Republic Of"":
+                  phone_code = ""+86""
+                  break;
+              case ""Singapore"":
+                  phone_code = ""+65""
+                  break;
+              case ""Australia"":
+                  phone_code = ""+61""
+                  break;
+              case ""USA"":
+                  phone_code = ""+1""
+                  break;
+              case ""United Kingdom"":
+                  phone_code = ""+44""
+                  break;
+              case """":
+              phone_code = """"
+              }
+ 
+  var  phone_number =  document.querySelector('[lightning-formattedphone_formattedphone]')
+  phone_number = (phone_number != null) ? phone_number.textContent : ""Unknown""
+ 
+var text_field = ""********************CALL SUMMARY********************\n"";
+text_field += ""Phone Number: "" +phone_code + "" "" + phone_number + ""\nSummary: \n-   Placed a phone call at "" +  calling_time + ""\n-    "";
+ 
+document .querySelectorAll( ""div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p"" ).forEach((x, i) => (x.textContent = text_field));
+","",1,c33
+r308,4,"","document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click())
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+","",1,c33
+r265,4,""," //Click All with Access function
+//Click the dropdown button
+document.querySelectorAll('[class=""forceIcon slds-button__icon slds-icon-utility-down slds-icon_container""]').forEach((x, i) => x.click());
+ 
+//Click the All with access button
+document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(2) > a"").forEach((x, i) => x.click());","",1,c33
+r369,4,"","document.querySelector('[class=""slds-form-element slds-grow slds-hint-parent override--slds-form-element""]').click()
+document.querySelectorAll('[class=""slds-checkbox--faux""]').forEach((x, i) => x.click());","https://microfocus.lightning.force.com",1,c37
+r373,3,"^UseDefaultAssignmentRule$","0","1",0,c37
+r318,4,"","document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click());
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[id=""feedTab__item""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Collapse all visible posts""]').forEach((x, i) => x.click());","",1,c55
+r319,4,"","var text_content = ""thanh.vunhat@microfocus.com\n tuan.nguyen-anh@microfocus.com\n nam.nguyenthanh@microfcus.com\n nhan.hathe@microfocus.com\n ngoc.lethibich@microfocus.com""
+document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p').forEach((x, i) => x.textContent = text_content);
+","",1,c55
+r313,4,""," document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(1) > a"").forEach((x, i) => x.click());
+","",1,c50
+r284,4,"","var text_field = ""********************INTERNAL NOTE********************\n-  \n-  ""
+document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p').forEach((x, i) => x.textContent=text_field)
+document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(1) > a"").forEach((x, i) => x.click());
+","",1,c41
+r317,4,"","//===================
+ 
+document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click())
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());
+","",1,c41
+r321,4,"","document.querySelectorAll('[data-label=""Milestones""]').forEach((x, i) => x.click());
+
+","",1,c56
+r378,4,"","document.querySelectorAll('[class=""slds-button markCompleteButton""]').forEach((x, i) => x.click());","",1,c56
+r248,4,"","function formatAMPM(date) {
+  var hours = date.getHours()
+  var minutes = date.getMinutes()
+  var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+ 
+var today = new Date();
+      dd = String(today.getDate()).padStart(2, '0');
+ 
+      yyyy = today.getFullYear();
+ 
+var month = new Array();
+      month[0] = ""January"";
+      month[1] = ""February"";
+      month[2] = ""March"";
+      month[3] = ""April"";
+      month[4] = ""May"";
+      month[5] = ""June"";
+      month[6] = ""July"";
+      month[7] = ""August"";
+      month[8] = ""September"";
+      month[9] = ""October"";
+      month[10] = ""November"";
+      month[11] = ""December"";
+     mm = month[today.getMonth()];
+      today =  ""on ""+ mm + "" ""+ dd  +"" ""+ yyyy;
+      calling_time = formatAMPM(new Date) + "" "" +  today  + "" GMT+7""
+ 
+var  country_name =  document.querySelector('lightning-formatted-address > a > div:nth-last-child(2)')
+        phone_code = """";
+        country_name = (country_name != null) ? country_name.textContent : ""Unknown""
+            switch(country_name) {
+            case ""Malaysia"":
+            phone_code = ""+60"";
+                break;
+            case ""Japan"":
+                phone_code = ""+81""
+                break;
+            case ""India"":
+                phone_code = ""+91""
+                break;
+            case ""China, Peoples Republic Of"":
+                phone_code = ""+86""
+                break;
+            case ""Singapore"":
+                phone_code = ""+65""
+                break;
+            case ""Australia"":
+                phone_code = ""+61""
+                break;
+            case ""United States of America"":
+                phone_code = ""+1""
+                break;
+            case ""United Kingdom"":
+                phone_code = ""+44""
+                break;
+            case """":
+            phone_code = """"
+            }
+ 
+var  phone_number =  document.querySelector('[lightning-formattedphone_formattedphone]')
+phone_number = (phone_number != null) ? phone_number.textContent : ""Unknown""
+ 
+var customer_name = document.querySelector('span.custom-truncate.uiOutputText')
+customer_name = (customer_name != null) ? customer_name.textContent : ""Unknown""
+const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase())
+customer_name = uppercaseWords(customer_name.toLowerCase())
+var arr = customer_name.split("" "")
+customer_name = arr[arr.length - 1]
+ 
+var   text_field = ""**********FTC BY PHONE***********\nPFTC: Y\nCalling Time: ""
+text_field += calling_time + ""\n"" + ""Phone Number: "" + phone_code + "" "" +  phone_number + "" ("" + country_name  + "")\nCallee's Name: "" + customer_name + ""\n"" + ""Detail:\n-   ""
+document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p').forEach((x, i) => x.textContent=text_field)
+","",1,c30
+r253,4,"","document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());document.querySelectorAll('[data-tab-name=""Case.SendEmail""]').forEach((x, i) => x.click())
+document.querySelectorAll('[href=""Cc""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());","",1,c30
+r254,4,""," //Click All with Access function
+//Click the dropdown button
+document.querySelectorAll('[class=""forceIcon slds-button__icon slds-icon-utility-down slds-icon_container""]').forEach((x, i) => x.click());
+ 
+//Click the All with access button
+document.querySelectorAll("" div.popupTargetContainer.uiPopupTarget.uiMenuList.uiMenuList--tablet.uiMenuList--left.uiMenuList--default > div > ul > li:nth-child(2) > a"").forEach((x, i) => x.click());","",1,c30
+r262,4,"","var acc_array = document.querySelectorAll("" div > slot > force-record-layout-row:nth-child(1) > slot > force-record-layout-item:nth-child(2) > div > div > div.slds-form-element__control > span > slot:nth-child(1) > slot > lightning-formatted-text"")
+    psw = document.querySelectorAll(""div > slot > force-record-layout-row:nth-child(2) > slot > force-record-layout-item:nth-child(2) > div > div > div.slds-form-element__control > span > slot:nth-child(1) > slot > lightning-formatted-text"")
+    text_content = document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p')
+    i
+    b = 2
+ 
+ for (i = 0; i < text_content.length; i++) {
+    text_content[i].textContent = ""ftp://"" + acc_array[b].textContent + "":"" + psw[b].textContent +""@ftp-pro.houston.softwaregrp.com/""
+     b = b + 4
+}
+","",1,c39
+r291,4,"","document.querySelectorAll('[data-label=""Chatter""]').forEach((x, i) => x.click());
+document.querySelectorAll('[data-tab-name=""FeedItem.TextPost""]').forEach((x, i) => x.click());
+document.querySelectorAll('[title=""Share an update...""]').forEach((x, i) => x.click());","",1,c39
+r379,4,"","text_content[] = document.querySelectorAll('div.ql-editor.slds-rich-text-area__content.slds-text-color_weak.slds-grow > p')
+console.log(text_content[].length)","",1,c65
+r388,0,"^email$","111","",1,c67
+r389,3,"^1$","1","",1,c67
+r381,0,"^email$","test@123","localhost:8080/cmkit/login",1,c66
+r382,1,"^password$","1234","localhost:8080/cmkit/login",1,c66
+r383,4,"","document.querySelector(""body > div.container > form > input"").click()","localhost:8080/cmkit/login",1,c66
+r384,4,"","document.querySelector(""#top-navbar > ul:nth-child(1) > li:nth-child(3) > a"").click()","localhost:8080/cmkit/$",1,c66
+r386,4,"","document.querySelector(""body > div > button"").click();","http://localhost:8080/cmkit/users",1,c66
+r387,0,"^email$","test@123","http://localhost:8080/cmkit/users",1,c66
+r390,3,"^1$","1","http://localhost:8080/cmkit/users",1,c66
+r391,4,"","document.querySelector(""#new_user > div > div > form > div.actions > input"").click()","http://localhost:8080/cmkit/users",1,c66
+### AUTOFILL OPTIONS ###,,,,,,
+advanced,"[]",,,,,
+exceptions,"[]",,,,,
+textclips,"[]",,,,,
+variables,"[]",,,,,
+activecat,1,,,,,
+autoimport,0,,,,,
+backup,0,30,,,,
+badge,1,,,,,
+closeinfobar,1,1,,,,
+debug,0,,,,,
+delay,0,1,,,,
+fluid,1,,,,,
+hidebackup,0,,,,,
+manual,1,,,,,
+mask,1,,,,,
+menu,1,,,,,
+overwrite,1,,,,,
+sitefilters,1,,,,,
+skiphidden,0,,,,,
+sound,0,,,,,
+vars,1,,,,,
+voice,0,1,,,,

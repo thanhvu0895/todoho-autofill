@@ -1,0 +1,62 @@
+### AUTOFILL PROFILES ###,,,,,,
+Profile ID,Name,Site,Hotkey,,,
+c90,1. PATH,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 1,,,
+c91,2. CLASSBS,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 2,,,
+c92,3. ID,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 3,,,
+c93,4. METHOD,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 4,,,
+c94,5. YOUR CONFIRM MESSAGE,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 5,,,
+c95,6. LINK BODY,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 6,,,
+### AUTOFILL RULES ###,,,,,,
+Rule ID,Type,Name,Value,Site,Mode,Profile
+r468,0,"^form\[find\]$","CLASSBS","",1,c91
+r469,0,"^form\[replace\]$","","",1,c91
+r471,0,"^form\[find\]$","ID","",1,c92
+r472,0,"^form\[replace\]$","","",1,c92
+r474,0,"^form\[find\]$","METHOD","",1,c93
+r475,0,"^form\[replace\]$","","",1,c93
+r477,0,"^form\[find\]$","YOUR CONFIRM MESSAGE","",1,c94
+r478,0,"^form\[replace\]$","","",1,c94
+r480,0,"^form\[find\]$","LINK BODY GOES HERE","",1,c95
+r481,0,"^form\[replace\]$","","",1,c95
+r465,0,"^form\[find\]$","PATH","",1,c90
+r466,0,"^form\[replace\]$","","",1,c90
+r467,0,"^form\[text\]$","NHOM 2:
+<t:link_to path=""${UrlUtils.PATH}"">LINK BODY GOES HERE</t:link_to>
+
+NHOM 3
+<t:link_to path=""${UrlUtils.PATH}"" classBS=""CLASSBS"">LINK BODY GOES HERE</t:link_to>
+<t:link_to path=""${UrlUtils.PATH}"" id=""${ID}"">LINK BODY GOES HERE</t:link_to>
+
+NHOM 4
+<t:link_to path=""${UrlUtils.PATH}"" classBS=""CLASSBS""  id=""${ID}"">LINK BODY GOES HERE</t:link_to>
+
+NHOM METHOD
+<t:link_to path=""${UrlUtils.PATH}"" classBS=""CLASSBS""  method=""METHOD"">LINK BODY GOES HERE</t:link_to>
+<t:link_to path=""${UrlUtils.PATH}"" classBS=""CLASSBS"" method=""METHOD"" id=""${ID}"">LINK BODY GOES HERE</t:link_to>
+
+NHOM CONFIRM
+<t:link_to path=""${UrlUtils.PATH}"" classBS=""CLASSBS"" id=""${ID}"" confirm=""YOUR CONFIRM MESSAGE""></t:link_to>
+<t:link_to path=""${UrlUtils.PATH}"" classBS=""CLASSBS"" confirm=""YOUR CONFIRM MESSAGE"">LINK BODY GOES HERE</t:link_to>","",1,c90
+### AUTOFILL OPTIONS ###,,,,,,
+advanced,"[]",,,,,
+exceptions,"[]",,,,,
+textclips,"[]",,,,,
+variables,"[]",,,,,
+activecat,1,,,,,
+autoimport,0,,,,,
+backup,0,30,,,,
+badge,1,,,,,
+closeinfobar,1,1,,,,
+debug,0,,,,,
+delay,0,1,,,,
+fluid,1,,,,,
+hidebackup,0,,,,,
+manual,1,,,,,
+mask,1,,,,,
+menu,1,,,,,
+overwrite,1,,,,,
+sitefilters,1,,,,,
+skiphidden,0,,,,,
+sound,0,,,,,
+vars,1,,,,,
+voice,0,1,,,,

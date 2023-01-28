@@ -1,0 +1,56 @@
+### AUTOFILL PROFILES ###,,,,,,
+Profile ID,Name,Site,Hotkey,,,
+c87,1. c:if,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 1,,,
+c88,c:choose,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 2,,,
+c89,TAB,unit-conversion.info/texttools/replace-text/,Ctrl + Alt + 3,,,
+### AUTOFILL RULES ###,,,,,,
+Rule ID,Type,Name,Value,Site,Mode,Profile
+r74,0,"^instance/hpsw\.status$","Work in Progress","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r76,0,"^var/G\.hpsw\.time\.spent$","00:05:00","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r77,0,"^var/sm\.activity$","Update from customer","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r79,3,"^instance/cust\.visible\.copy$","1","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r106,4,"","var text_field = document.querySelector('[name=""var/update.action/update.action""]').value
+if (text_field == """" || text_field == ""********EMAIL TO CUSTOMER********"") text_field = (""********EMAIL FROM CUSTOMER********"")
+else {
+	text_field = text_field.replaceAll(/From: (?!Vu Nhat)/g, ""********EMAIL FROM CUSTOMER********\nFrom: "")
+    text_field = text_field.replaceAll('From: Vu Nhat', '********EMAIL TO CUSTOMER********\nFrom: Vu Nhat')
+}  
+document.querySelector('[name=""var/update.action/update.action""]').value  = text_field","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r113,3,"^instance/hpsw\.portal\.visible$","1","sparks-sm-pro-web.itcs.softwaregrp.net/sm/detail.do",1,
+r458,0,"^form\[find\]$","CONDITION","",1,c87
+r459,0,"^form\[replace\]$","","",1,c87
+r460,0,"^form\[text\]$","<c:if test=""${CONDITION}""></c:if>","",1,c87
+r464,0,"^form\[find\]$","OTHERWISE","",1,c89
+r461,0,"^form\[find\]$","CONDITION1","",1,c88
+r462,0,"^form\[replace\]$","","",1,c88
+r463,0,"^form\[text\]$","<c:choose>
+	<c:when test=${CONDITION1}>
+	
+	</c:when>
+	<c:otherwise test=${OTHERWISE}>
+	
+	</c:otherwise>
+</c:choose>","",1,c88
+### AUTOFILL OPTIONS ###,,,,,,
+advanced,"[]",,,,,
+exceptions,"[]",,,,,
+textclips,"[]",,,,,
+variables,"[]",,,,,
+activecat,1,,,,,
+autoimport,0,,,,,
+backup,0,30,,,,
+badge,1,,,,,
+closeinfobar,1,1,,,,
+debug,0,,,,,
+delay,0,1,,,,
+fluid,1,,,,,
+hidebackup,0,,,,,
+manual,1,,,,,
+mask,1,,,,,
+menu,1,,,,,
+overwrite,1,,,,,
+sitefilters,1,,,,,
+skiphidden,0,,,,,
+sound,0,,,,,
+vars,1,,,,,
+voice,0,1,,,,
