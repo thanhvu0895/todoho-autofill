@@ -1,0 +1,40 @@
+### AUTOFILL PROFILES ###,,,,,,
+Profile ID,Name,Site,Hotkey,,,
+c66,1. Login,localhost:8080/cmkit/,Ctrl + Alt + 1,,,
+c74,2. SELECT DEPARTMENT COURSE TEST,http://localhost:8080/cmkit/,Ctrl + Alt + 2,,,
+c75,3. NEW ASSIGNMENT,,Ctrl + Alt + 3,,,
+c76,4. COPY ASIGNMENT,,Ctrl + Alt + 4,,,
+### AUTOFILL RULES ###,,,,,,
+Rule ID,Type,Name,Value,Site,Mode,Profile
+r381,0,"^email$","test@123","localhost:8080/cmkit/login",1,c66
+r382,1,"^password$","1234","localhost:8080/cmkit/login",1,c66
+r383,4,"","document.querySelector(""body > div.container > form > input"").click() /* CLICK LOGIN  */","localhost:8080/cmkit/login",1,c66
+r452,4,"","document.querySelector(""#top-navbar > ul:nth-child(1) > li.dropdown.open > ul > li:nth-child(1) > a"").click()","",1,c66
+r423,4,"","document.querySelector(""#top-navbar > ul:nth-child(1) > li.dropdown > a"").click()","",1,c74
+r453,4,"","document.querySelector(""#top-navbar > ul:nth-child(1) > li.dropdown.open > ul > li:nth-child(1) > a"").click()","",1,c74
+r461,4,"","document.querySelector(""#courses > tbody > tr:nth-child(2) > td:nth-child(1) > a"").click() /* CLICK TEST DEPARTMENT */","",1,c74
+r430,4,"","document.querySelector(""body > div > p:nth-child(5)"").click() /* CLICK NEW ASSIGNMENT */","http://localhost:8080/cmkit/courses/*",1,c75
+r463,4,"","document.querySelector(""body > div > p:nth-child(5) > a.btn.btn-primary"").click()","http://localhost:8080/cmkit/courses/*",1,c76
+### AUTOFILL OPTIONS ###,,,,,,
+advanced,"[]",,,,,
+exceptions,"[]",,,,,
+textclips,"[]",,,,,
+variables,"[]",,,,,
+activecat,1,,,,,
+autoimport,1,https://raw.githubusercontent.com/thanhvu0895/todoho-autofill/main/TESTING/Klass_Settings.txt,,,,
+backup,0,30,,,,
+badge,1,,,,,
+closeinfobar,1,1,,,,
+debug,0,,,,,
+delay,0,1,,,,
+fluid,1,,,,,
+hidebackup,0,,,,,
+manual,1,,,,,
+mask,1,,,,,
+menu,1,,,,,
+overwrite,1,,,,,
+sitefilters,1,,,,,
+skiphidden,0,,,,,
+sound,0,,,,,
+vars,1,,,,,
+voice,0,1,,,,
